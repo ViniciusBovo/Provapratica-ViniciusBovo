@@ -1,72 +1,50 @@
-import { useState, useEffect } from "react";
-import "./App.css";
-import images from "./assets/images.png";
-import ListRender from "./components/ListRender";
+import { useState, useEffect } from "react"
+import StatusBar from "./components/StatusBar.js"
+import Footer from "./components/Footer"
+import ProdutoForm from "./components/ProdutoForm"
+import images from "./assets/images.jpg"
+import "./App.css"
 
 function App() {
-  const [userName] = useState();
+  const [produtos, setProdutos] = useState([])
+
+  const adicionarProduto = (produto) => {
+    setProdutos([...produtos, produto])
+  }
+
 
   useEffect(() => {
-    console.log("Sistema iniciado!");
-  }, []);
+    console.log("Lista de produtos atualizada:", produtos)
+  }, [produtos])
+
   return (
-    <>
-    <ListRender/>
-      <div style={{ textAlign: "center", fontFamily: "Arial" }}>
-        <header style={{ background: "#333", color: "#fff", padding: "10px" }}>
-          <h1>Sistema de Produtos</h1>
-        </header>
+    <div>
 
-        <div>
-          <img src={images} alt="Imagem do ecommerce" />
-        </div>
+    <div className="container">
+        <StatusBar />
 
-        <div style={{ marginTop: "20px" }}>
-          <input
-            type="text"
-            placeholder="Nome do produto"
-            value={nome}
-            onChange={(e) => setNome(e.target.value)}
-          />
+      
+        <img
+          src={images}
+          alt="E-commerce"
+          width="100"
+        />
 
-          <br />
-          <br />
+        <ProdutoForm adicionarProduto={adicionarProduto} />
 
-          <input
-            type="number"
-            placeholder="Preço"
-            value={preco}
-            onChange={(e) => setPreco(e.target.value)}
-          />
-
-          <br />
-          <br />
-
-          <button onClick={adicionarProduto}>Adicionar Produto</button>
-        </div>
-
-        <div style={{ marginTop: "30px" }}>
-          <h2>Lista de Produtos</h2>
-
+      
+        <ul>
           {produtos.map((produto, index) => (
-            <div key={index}>
-              <p>
-                {produto.nome} - R$ {produto.preco}
-              </p>
-            </div>
+            <li key={index}>
+              {produto.nome} - R$ {produto.preco}
+            </li>
           ))}
-        </div>
-      </div>
+        </ul>
 
-      <div>
-        <footer
-          style={{ marginTop: "600px", padding: "10px", background: "black" }}
-        >
-          <p>Vinicius - Data 14/04</p>
-        </footer>
+        <Footer />
       </div>
-    </>
-  );
+    </div>
+  )
 }
 
-export default App;
+export default App
