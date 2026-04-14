@@ -11,9 +11,9 @@ body {
   align-items: center;
 }
 
-h2 {
+h1 {
   margin-top: 20px;
-  color: #333;
+  color: #080766;
 }
 
 img {
@@ -36,14 +36,14 @@ input {
 button {
   padding: 8px 12px;
   border: none;
-  background: #007bff;
+  background: #5d9202;
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  background: #0056b3;
+  background: #5d9202;
 }
 
 ul {
@@ -63,5 +63,5 @@ li {
 footer {
   margin-top: auto;
   margin-bottom: 10px;
-  color: #555;
+  color: #000000;
 }

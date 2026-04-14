@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import StatusBar from "./components/StatusBar.js"
+import StatusBar from "./components/StatusBar"
 import Footer from "./components/Footer"
 import ProdutoForm from "./components/ProdutoForm"
 import images from "./assets/images.jpg"

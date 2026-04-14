@@ -1,7 +1,7 @@
 function StatusBar() {
     return (
         <div>
-            <h2>Sistemas de Produtos</h2>
+            <h1>Sistemas de Produtos</h1>
         </div>
     )
 }
